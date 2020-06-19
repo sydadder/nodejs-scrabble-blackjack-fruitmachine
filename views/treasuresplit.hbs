@@ -1,8 +1,18 @@
 <div class="container p-3 my-3 border">
 
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/games">Games</a></li>
+            <li class="breadcrumb-item active" aria-current="page">TreasureSplit</li>
+        </ol>
+    </nav>
+
 
     <h1>{{ title }}</h1>
     <p>Welcome to {{ title }}</p>
+    <p>Enter integers separated by commas. These integers will represent the value of each coin that needs to be split
+        into n number of individuals. If it is possible to split the coins, the possible share options will show up</p>
 
     <form action="#">
         <div class="form-group">
@@ -33,7 +43,5 @@
         } else {
             $(".treasureResults").html("<h4>Invalid entry.  Only numerics and commas are allowed</h4>");
         }
-
-
     });
 </script>
