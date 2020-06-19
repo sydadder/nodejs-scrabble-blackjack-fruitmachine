@@ -2,6 +2,12 @@ var express = require("express");
 var router = express.Router();
 require.cache = {};
 
+router.get("/", function (req, res, next) {
+  res.render("games", {
+    title: "Game List",
+  });
+});
+
 router.get("/games", function (req, res, next) {
   res.render("games", {
     title: "Game List",
