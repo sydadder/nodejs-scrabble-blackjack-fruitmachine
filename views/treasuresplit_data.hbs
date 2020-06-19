@@ -1,0 +1,28 @@
+<p>Value of the coins is is
+    <span class="h4">{{item_values}}</span>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Count of pirates</th>
+            <th scope="col">Their Share</th>
+        </tr>
+    </thead>
+    <p class="h3">Distribution</p>
+    <tbody>
+        {{#each finalOutput}}
+
+        <tr>
+            <td>{{@key}}</td>
+            <td>
+                {{#each this}}
+                | {{ this }} |
+                {{/each}}
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>

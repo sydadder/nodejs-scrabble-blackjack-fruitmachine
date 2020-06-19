@@ -1,0 +1,39 @@
+<div class="container p-3 my-3 border">
+
+
+    <h1>{{ title }}</h1>
+    <p>Welcome to {{ title }}</p>
+
+    <form action="#">
+        <div class="form-group">
+            <label for="values">Values:</label>
+            <input type="values" class="form-control" placeholder="Enter values" id="values">
+        </div>
+        <button id="triggerTreasureHunt" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <div class="treasureResults"></div>
+</div>
+
+
+<script type="text/javascript">
+    $('body').on('click', '#triggerTreasureHunt', function () {
+        //Assign Random tiles to player
+        $(".treasureResults").html();
+
+        let valuePassed = $('#values').val();
+        var reg = /[0-9,]+$/;
+
+        if (reg.test(valuePassed)) {
+            $.ajax({
+                url: "/treasuresplit/" + valuePassed, success: function (result) {
+                    $(".treasureResults").html(result);
+                }
+            });
+        } else {
+            $(".treasureResults").html("<h4>Invalid entry.  Only numerics and commas are allowed</h4>");
+        }
+
+
+    });
+</script>

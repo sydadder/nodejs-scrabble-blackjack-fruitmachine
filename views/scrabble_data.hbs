@@ -1,0 +1,59 @@
+<p>Random word obtained is
+    <span class="h4">{{RandomWordGenerated}}</span>
+</p>
+<p>Size of the longest valid word that can be formed from the seven tiles is :
+    <span class="h4">{{longestWordSize}}</span>
+</p>
+<p>Highest Score for valid words is :
+    <span class="h4">{{WordMaxScore}}</span>
+</p>
+<p class="h4">Valid Word List obtained is</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Valid Word</th>
+            <th scope="col">Size of Word</th>
+            <th scope="col">Score</th>
+        </tr>
+    </thead>
+    <p class="h3">LongestStringWords</p>
+    <tbody>
+        {{#each LongestStringWords}}
+        <tr>
+            {{#each this}}
+            <td>
+                {{ this }}
+            </td>
+
+            {{/each}}
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Valid Word</th>
+            <th scope="col">Size of Word</th>
+            <th scope="col">Score</th>
+        </tr>
+    </thead>
+    <p class="h3">HighScoringWords</p>
+    <tbody>
+        {{#each HighScoringWords}}
+        <tr>
+            {{#each this}}
+            <td>
+                {{ this }}
+            </td>
+
+            {{/each}}
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

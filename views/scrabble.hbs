@@ -1,0 +1,34 @@
+<div class="container p-3 my-3 border">
+
+
+    <h1>{{ title }}</h1>
+    <p>Welcome to {{ title }}</p>
+
+    <p>Please click on the button to generate random 7 alphabet tiles <a id="triggerScrabble" href="#">Trigger
+            Scrabble</a>
+    </p>
+
+    <div class="ScrabbleResults"></div>
+</div>
+
+<script type="text/javascript">
+    $('body').on('click', '#triggerScrabble', function () {
+        //Assign Random tiles to player
+        let english_alphabets = "EEEEEEEEEEEEAAAAAAAAAIIIIIIIIIOOOOOOOONNNNNNRRRRRRTTTTTTLLLLSSSSUUUUDDDDGGGBBCCMMPPFFHHVVWWYYKJXQZ"
+            .toLowerCase()
+            .split("");
+
+        const generateRandomAlphabets = () => {
+            const shuffled = english_alphabets.sort(() => 0.5 - Math.random());
+            let random_seven = shuffled.slice(0, 7);
+            return random_seven.join("");
+        };
+
+        var randomString = generateRandomAlphabets();
+        $.ajax({
+            url: "/scrabble/trigger/" + randomString, success: function (result) {
+                $(".ScrabbleResults").html(result);
+            }
+        });
+    });
+</script>
