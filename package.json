@@ -12,7 +12,7 @@
     "debug": "~2.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-handlebars": "^3.0.0",
+    "express-handlebars": "^5.3.1",
     "morgan": "^1.10.0",
     "route-cache": "^0.4.5",
     "serve-favicon": "^2.5.0",
